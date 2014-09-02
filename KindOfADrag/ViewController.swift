@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    /// must be >= 1.0
     var snapX:CGFloat = 40.0
-    var snapY:CGFloat = 40.0
+    
+    /// must be >= 1.0
+    var snapY:CGFloat = 1.0
+
+    /// how far to move before dragging
     var threshold:CGFloat = 0.0
+    
+    /// the guy we're dragging
     var selectedView:UIView?
+    
+    /// drag in the Y direction?
     var shouldDragY = true
+    
+    /// drag in the X direction?
     var shouldDragX = true
     
     override func viewDidLoad() {
@@ -71,9 +82,6 @@ class ViewController: UIViewController {
                             subview.center.y = p.y - (p.y % snapY)
                         }
                     }
-                } else {
-                    println("no selected subview \(subview)")
-                    return
                 }
             }
             

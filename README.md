@@ -11,7 +11,7 @@ You can set a snap in the x or y direction.
 
 ## Blog post for this example.
 
-[Blog post](http://www.rockhoppertech.com/blog/)
+[Blog post](http://www.rockhoppertech.com/blog/swift-dragging-a-uiview-with-snap/)
 
 
 
