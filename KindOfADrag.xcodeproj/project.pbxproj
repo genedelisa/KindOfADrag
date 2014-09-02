@@ -12,6 +12,8 @@
 		B05A753719B5EF9600B44BFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05A753519B5EF9600B44BFF /* Main.storyboard */; };
 		B05A753919B5EF9600B44BFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B05A753819B5EF9600B44BFF /* Images.xcassets */; };
 		B05A754519B5EF9600B44BFF /* KindOfADragTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A754419B5EF9600B44BFF /* KindOfADragTests.swift */; };
+		B05A754F19B5F04D00B44BFF /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A754E19B5F04D00B44BFF /* MyView.swift */; };
+		B05A755119B606A400B44BFF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B05A755019B606A400B44BFF /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		B05A753E19B5EF9600B44BFF /* KindOfADragTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KindOfADragTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05A754319B5EF9600B44BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B05A754419B5EF9600B44BFF /* KindOfADragTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindOfADragTests.swift; sourceTree = "<group>"; };
+		B05A754E19B5F04D00B44BFF /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		B05A755019B606A400B44BFF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		B05A752319B5EF9600B44BFF = {
 			isa = PBXGroup;
 			children = (
+				B05A755019B606A400B44BFF /* README.md */,
 				B05A752E19B5EF9600B44BFF /* KindOfADrag */,
 				B05A754119B5EF9600B44BFF /* KindOfADragTests */,
 				B05A752D19B5EF9600B44BFF /* Products */,
@@ -80,6 +85,7 @@
 				B05A753519B5EF9600B44BFF /* Main.storyboard */,
 				B05A753819B5EF9600B44BFF /* Images.xcassets */,
 				B05A752F19B5EF9600B44BFF /* Supporting Files */,
+				B05A754E19B5F04D00B44BFF /* MyView.swift */,
 			);
 			path = KindOfADrag;
 			sourceTree = "<group>";
@@ -208,7 +214,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05A754F19B5F04D00B44BFF /* MyView.swift in Sources */,
 				B05A753419B5EF9600B44BFF /* ViewController.swift in Sources */,
+				B05A755119B606A400B44BFF /* README.md in Sources */,
 				B05A753219B5EF9600B44BFF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
