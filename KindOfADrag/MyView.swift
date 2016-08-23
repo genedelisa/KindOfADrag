@@ -9,11 +9,15 @@
 import UIKit
 
 class MyView: UIView {
+    
     var fillColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 1.0).CGColor
+    
     var boundingBoxColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
     
     override func drawRect(rect: CGRect) {
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSaveGState(context)
+        
         CGContextClearRect(context, rect)
         
         let viewWidth = CGRectGetWidth(self.bounds)
@@ -25,6 +29,8 @@ class MyView: UIView {
         CGContextSetStrokeColorWithColor(context, boundingBoxColor)
         CGContextSetLineWidth(context, 1.0)
         CGContextStrokeRect(context, self.bounds)
+
+        CGContextRestoreGState(context)
     }
 
 }

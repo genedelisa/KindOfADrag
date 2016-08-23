@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     /// must be >= 1.0
     var snapY:CGFloat = 1.0
-
+    
     /// how far to move before dragging
     var threshold:CGFloat = 0.0
     
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     func setupGestures() {
-        var pan = UIPanGestureRecognizer(target:self, action:"pan:")
+        let pan = UIPanGestureRecognizer(target:self, action:#selector(ViewController.pan(_:)))
         pan.maximumNumberOfTouches = 1
         pan.minimumNumberOfTouches = 1
         self.view.addGestureRecognizer(pan)
@@ -56,12 +56,12 @@ class ViewController: UIViewController {
     
     func pan(rec:UIPanGestureRecognizer) {
         
-        var p:CGPoint = rec.locationInView(self.view)
+        let p:CGPoint = rec.locationInView(self.view)
         var center:CGPoint = CGPointZero
         
         switch rec.state {
         case .Began:
-            println("began")
+            print("began")
             selectedView = view.hitTest(p, withEvent: nil)
             if selectedView != nil {
                 self.view.bringSubviewToFront(selectedView!)
@@ -70,8 +70,8 @@ class ViewController: UIViewController {
         case .Changed:
             if let subview = selectedView {
                 center = subview.center
-                var distance = sqrt(pow((center.x - p.x), 2.0) + pow((center.y - p.y), 2.0))
-                println("distance \(distance)")
+                let distance = sqrt(pow((center.x - p.x), 2.0) + pow((center.y - p.y), 2.0))
+                print("distance \(distance)")
                 
                 if subview is MyView {
                     if distance > threshold {
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
             }
             
         case .Ended:
-            println("ended")
+            print("ended")
             if let subview = selectedView {
                 if subview is MyView {
                     // do whatever
@@ -95,11 +95,11 @@ class ViewController: UIViewController {
             selectedView = nil
             
         case .Possible:
-            println("possible")
+            print("possible")
         case .Cancelled:
-            println("cancelled")
+            print("cancelled")
         case .Failed:
-            println("failed")
+            print("failed")
         }
     }
 }
