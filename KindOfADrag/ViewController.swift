@@ -33,12 +33,12 @@ class ViewController: UIViewController {
         
         var myview = MyView()
         view.addSubview(myview)
-        myview.frame = CGRectMake(10, 40, 40, 40)
+        myview.frame = CGRect(x: 10, y: 40, width: 40, height: 40)
         
         myview = MyView()
         view.addSubview(myview)
-        myview.frame = CGRectMake(60, 80, 40, 40)
-        myview.fillColor = UIColor(red: 1.0, green: 0.5, blue: 1.0, alpha: 1.0).CGColor
+        myview.frame = CGRect(x: 60, y: 80, width: 40, height: 40)
+        myview.fillColor = UIColor(red: 1.0, green: 0.5, blue: 1.0, alpha: 1.0).cgColor
         
         setupGestures()
     }
@@ -54,38 +54,38 @@ class ViewController: UIViewController {
         self.view.addGestureRecognizer(pan)
     }
     
-    func pan(rec:UIPanGestureRecognizer) {
+    func pan(_ rec:UIPanGestureRecognizer) {
         
-        let p:CGPoint = rec.locationInView(self.view)
-        var center:CGPoint = CGPointZero
+        let p:CGPoint = rec.location(in: self.view)
+        var center:CGPoint = .zero
         
         switch rec.state {
-        case .Began:
+        case .began:
             print("began")
-            selectedView = view.hitTest(p, withEvent: nil)
+            selectedView = view.hitTest(p, with: nil)
             if selectedView != nil {
-                self.view.bringSubviewToFront(selectedView!)
+                self.view.bringSubview(toFront: selectedView!)
             }
             
-        case .Changed:
+        case .changed:
             if let subview = selectedView {
                 center = subview.center
                 let distance = sqrt(pow((center.x - p.x), 2.0) + pow((center.y - p.y), 2.0))
-                print("distance \(distance)")
+                print("distance \(distance) threshold \(threshold)")
                 
                 if subview is MyView {
                     if distance > threshold {
                         if shouldDragX {
-                            subview.center.x = p.x - (p.x % snapX)
+                            subview.center.x = p.x - (p.x.truncatingRemainder(dividingBy: snapX))
                         }
                         if shouldDragY {
-                            subview.center.y = p.y - (p.y % snapY)
+                            subview.center.y = p.y - (p.y.truncatingRemainder(dividingBy: snapY))
                         }
                     }
                 }
             }
             
-        case .Ended:
+        case .ended:
             print("ended")
             if let subview = selectedView {
                 if subview is MyView {
@@ -94,12 +94,14 @@ class ViewController: UIViewController {
             }
             selectedView = nil
             
-        case .Possible:
+        case .possible:
             print("possible")
-        case .Cancelled:
+        case .cancelled:
             print("cancelled")
-        case .Failed:
+            selectedView = nil
+        case .failed:
             print("failed")
+            selectedView = nil
         }
     }
 }

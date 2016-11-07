@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/genedelisa/KindOfADrag.svg)](https://travis-ci.org/genedelisa/KindOfADrag)
 [![GitHub tag](https://img.shields.io/github/tag/genedelisa/KindOfADrag.svg)](https://github.com/genedelisa/KindOfADrag/)
 [![GitHub release](https://img.shields.io/github/release/genedelisa/KindOfADrag.svg)](https://github.com/genedelisa/KindOfADrag/)
-[![Swift 2](https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat")](https://developer.apple.com/swift)
+[![Swift 3](https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat")](https://developer.apple.com/swift)
 
 
 [![iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://swift.org/)
