@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         self.view.addGestureRecognizer(pan)
     }
     
-    func pan(_ rec:UIPanGestureRecognizer) {
+    @objc func pan(_ rec:UIPanGestureRecognizer) {
         
         let p:CGPoint = rec.location(in: self.view)
         var center:CGPoint = .zero
